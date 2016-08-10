@@ -27,8 +27,24 @@
     sql: ${TABLE}.checkout_date
 
   - dimension: price
+    label: "Reservation Price"
     type: number
     sql: ${TABLE}.price
+    
+  - dimension: pricepernight
+    label: "Price/Night"
+    type: number
+    sql: ${TABLE}.price/${TABLE}.length
+
+  - measure: pricea
+    label: "Reservation Price (Avg)"
+    type: avg
+    sql: ${price}
+    
+  - measure: prices
+    label: "Reservation Price (Sum)"
+    type: sum
+    sql: ${price}
 
   - dimension: date_booked
     type: date
@@ -37,6 +53,16 @@
   - dimension: length
     type: number
     sql: ${TABLE}.length
+    
+  - measure: lengtha
+    type: avg
+    label: "Reservation Length (Avg)"
+    sql: ${length}
+    
+  - measure: lengths
+    type: sum
+    label: "Reservation Length (Sum)"
+    sql: ${length}
 
   - dimension_group: created_at
     type: time

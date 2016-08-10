@@ -141,20 +141,36 @@
     type: location
     sql_latitude: ${TABLE}.latitiude
     sql_longitude: ${TABLE}.longitude
+    
+  - dimension: geolocation3
+    label: "GeolocationR3"
+    type: location
+    sql_latitude: round(${TABLE}.latitiude::numeric,3)
+    sql_longitude: round(${TABLE}.longitude::numeric,3)
+    
+  - dimension: geolocation2
+    label: "GeolocationR2"
+    type: location
+    sql_latitude: round(${TABLE}.latitiude::numeric,2)
+    sql_longitude: round(${TABLE}.longitude::numeric,2)
 
   - dimension: location
+    label: "Location (City, ST)"
     type: string
     sql: ${TABLE}.location
 
   - dimension: zip_code
+    label: "Zip Code"
     type: string
     sql: ${TABLE}.zip_code
 
   - dimension_group: created_at
+    hidden: true
     type: time
     sql: ${TABLE}.created_at
 
   - dimension: region_definition
+    label: "Region"
     type: string
     sql: ${TABLE}.region_definition
 

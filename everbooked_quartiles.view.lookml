@@ -10,63 +10,78 @@
     drill_fields: detail*
 
   - dimension: airbnb_listing_id
+    hidden: true
     primary_key: true
     type: string
     sql: ${TABLE}.airbnb_listing_id
 
   - dimension: pricing_quartile_for_zip
+    label: "Pricing Quartile for Zip"
     type: number
     sql: ${TABLE}.pricing_quartile_for_zip
 
   - dimension: occupancy_quartile_for_zip
+    label: "Occupancy Quartile for Zip"
     type: number
     sql: ${TABLE}.occupancy_quartile_for_zip
 
   - dimension: days_on_market_quartile_for_zip
+    label: "Days on Market Quartile for Zip"
     type: number
     sql: ${TABLE}.days_on_market_quartile_for_zip
 
   - dimension: revpar_quartile_for_zip
+    label: "Rev Par Quartile for Zip"
     type: number
     sql: ${TABLE}.revpar_quartile_for_zip
 
   - dimension: pricing_quartile_for_city
+    label: "Pricing Quartile for City"
     type: number
     sql: ${TABLE}.pricing_quartile_for_city
 
   - dimension: occupancy_quartile_for_city
+    label: "Occupancy Quartile for City"
     type: number
     sql: ${TABLE}.occupancy_quartile_for_city
 
   - dimension: days_on_market_quartile_for_city
+    label: "Days on Market Quartile for City"
     type: number
     sql: ${TABLE}.days_on_market_quartile_for_city
 
   - dimension: revpar_quartile_for_city
+    label: "Rev Par Quartile for City"
     type: number
     sql: ${TABLE}.revpar_quartile_for_city
 
   - dimension: pricing_quartile_for_market
+    label: "Pricing Quartile for Market"
     type: number
     sql: ${TABLE}.pricing_quartile_for_market
 
   - dimension: occupancy_quartile_for_market
+    label: "Occupancy Quartile for Market"
     type: number
     sql: ${TABLE}.occupancy_quartile_for_market
 
   - dimension: days_on_market_quartile_for_market
+    label: "Days on Market Quartile for Market"
     type: number
     sql: ${TABLE}.days_on_market_quartile_for_market
 
   - dimension: revpar_quartile_for_market
+    label: "Rev Par Quartile for Market"
     type: number
     sql: ${TABLE}.revpar_quartile_for_market
 
   - dimension_group: created_at
+    hidden: true
     type: time
     sql: ${TABLE}.created_at
 
   - dimension: region_definition
+    label: "Region"
     type: string
     sql: ${TABLE}.region_definition
 
