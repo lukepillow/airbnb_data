@@ -35,16 +35,24 @@
     label: "Price/Night"
     type: number
     sql: ${TABLE}.price/${TABLE}.length
+    
+  - measure: pricepernighta
+    label: "Price/Night (Avg)"
+    type: number
+    sql: sum(${TABLE}.price)/sum(${TABLE}.length)
+    value_format_name: usd_0
 
   - measure: pricea
     label: "Reservation Price (Avg)"
     type: avg
     sql: ${price}
+    value_format_name: usd_0
     
   - measure: prices
     label: "Reservation Price (Sum)"
     type: sum
     sql: ${price}
+    value_format_name: usd_0
 
   - dimension: date_booked
     type: date
@@ -58,11 +66,13 @@
     type: avg
     label: "Reservation Length (Avg)"
     sql: ${length}
+    value_format_name: decimal_2
     
   - measure: lengths
     type: sum
     label: "Reservation Length (Sum)"
     sql: ${length}
+    value_format_name: decimal_2
 
   - dimension_group: created_at
     type: time
