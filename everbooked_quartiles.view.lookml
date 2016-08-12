@@ -75,15 +75,7 @@
     type: number
     sql: ${TABLE}.revpar_quartile_for_market
 
-  - dimension_group: created_at
-    hidden: true
-    type: time
-    sql: ${TABLE}.created_at
 
-  - dimension: region_definition
-    label: "Region"
-    type: string
-    sql: ${TABLE}.region_definition
 
   sets:
     detail:
@@ -100,6 +92,5 @@
       - occupancy_quartile_for_market
       - days_on_market_quartile_for_market
       - revpar_quartile_for_market
-      - created_at_time
-      - region_definition
+
 

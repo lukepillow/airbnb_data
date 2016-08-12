@@ -173,6 +173,18 @@
     label: "Region"
     type: string
     sql: ${TABLE}.region_definition
+  
+  - dimension: active
+    label: "IsActive"
+    type: yesno
+    sql: ${TABLE}.active
+    
+  - dimension: lgd
+    label: "Last Collected"
+    type: date
+    sql: ${TABLE}.last_gathered_date
+    
+    
 
   sets:
     detail:

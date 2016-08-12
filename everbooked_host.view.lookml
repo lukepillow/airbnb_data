@@ -67,15 +67,6 @@
     type: string
     sql: ${TABLE}.location
 
-  - dimension_group: created_at
-    hidden: true
-    type: time
-    sql: ${TABLE}.created_at
-
-  - dimension: region_definition
-    label: "Region (Dataset def. - not host location)"
-    type: string
-    sql: ${TABLE}.region_definition
 
   sets:
     detail:

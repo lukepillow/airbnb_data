@@ -74,13 +74,6 @@
     sql: ${length}
     value_format_name: decimal_2
 
-  - dimension_group: created_at
-    type: time
-    sql: ${TABLE}.created_at
-
-  - dimension: region_definition
-    type: string
-    sql: ${TABLE}.region_definition
 
   sets:
     detail:
@@ -91,6 +84,5 @@
       - price
       - date_booked
       - length
-      - created_at_time
-      - region_definition
+
 
