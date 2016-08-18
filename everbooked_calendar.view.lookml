@@ -24,6 +24,12 @@
     label: "Booking Date"
     type: date
     sql: ${TABLE}.booking_date
+    
+  - dimension_group: booking_datet
+    label: "Booking Date Group"
+    type: time
+    timeframes: [date, week, month]
+    sql: ${booking_date}
 
   - dimension: status
     label: "Status"
