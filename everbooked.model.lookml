@@ -11,10 +11,10 @@
       relationship: one_to_many
       view_label: "Amenities"
       
-    #- join: everbooked_calendar 
-    #  sql_on: ${everbooked_calendar.airbnb_listing_id} = ${everbooked_airbnb.listing_id}
-    #  relationship: one_to_many
-    #  view_label: "Calendar"
+    - join: everbooked_calendar 
+      sql_on: ${everbooked_calendar.airbnb_listing_id} = ${everbooked_airbnb.listing_id}
+      relationship: one_to_many
+      view_label: "Calendar"
       
     - join: everbooked_host
       sql_on: ${everbooked_host.host_id} = ${everbooked_airbnb.host_id}

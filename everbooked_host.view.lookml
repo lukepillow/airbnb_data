@@ -7,8 +7,8 @@
   fields:
   - measure: count
     label: "Count"
-    type: count
-    drill_fields: detail*
+    type: number 
+    sql: count(distinct ${TABLE}.host_id)
 
   - dimension: host_id
     primary_key: true
