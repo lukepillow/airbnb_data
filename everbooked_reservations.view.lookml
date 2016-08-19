@@ -22,8 +22,9 @@
     type: date
     sql: ${TABLE}.checkin_date
 
-  - dimension: checkout_date
-    type: date
+  - dimension_group: checkout_date
+    type: time
+    timeframes: [date, week, month]
     sql: ${TABLE}.checkout_date
 
   - dimension: price
