@@ -37,6 +37,10 @@
     type: number
     sql: ${TABLE}.price/${TABLE}.length
     
+  - dimension: Airbnb_URL
+    type: string
+    sql: CONCAT('https://www.airbnb.com/rooms/', ${airbnb_listing_id}) 
+  
   - measure: pricepernighta
     label: "Price/Night (Avg)"
     type: number
