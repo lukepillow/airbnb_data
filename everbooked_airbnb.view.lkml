@@ -37,7 +37,13 @@ view: everbooked_airbnb {
   dimension: property_type {
     label: "Property Type"
     type: string
-    sql: ${TABLE}.property_type ;;
+    sql:  ${TABLE}.property_type ;;
+  }
+
+  dimension: type {
+    label: "Type"
+    type: string
+    sql: case ${property_type} when 'Apartment' then 'Apartment' when 'House' then 'House' when 'Condominium' then 'Apartment' else 'Other' End;;
   }
 
   dimension: rating {
@@ -220,6 +226,6 @@ view: everbooked_airbnb {
   }
 
   set: detail {
-    fields: [listing_id, host_id, name, rental_type, property_type, rating, photo_count, bedrooms, bathrooms, accomdates, base_price, cleaning_fee, extra_people, min_stay, latitiude, longitude, location, zip_code, created_at_time, region_definition]
+    fields: [listing_id, host_id, name, rental_type, property_type, type, rating, photo_count, bedrooms, bathrooms, accomdates, base_price, cleaning_fee, extra_people, min_stay, latitiude, longitude, location, zip_code, created_at_time, region_definition]
   }
 }
